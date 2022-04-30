@@ -20,6 +20,6 @@ class Contract extends Model {
 
     public function scopeFields($query)
     {
-        return $query->select('customer_id','description');
+        return $query->select('customer_id', 'contract_id as contractId', 'description');
     }
 }

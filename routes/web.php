@@ -10,13 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contract/{customer_id}/{contract_id}', [
-    'as' => 'contract.show',
-    'uses' => 'ContractController@show'
+Route::get('/contract/{customer_id}', [
+    'as' => 'contract.index',
+    'uses' => 'ContractController@index'
 ])->defaults('contract_id', 'LOREN');
 
